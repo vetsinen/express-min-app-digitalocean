@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Miniport by HTML5 UP</title>
+    <title>su casa</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 <!--    <link rel="stylesheet" href="/main.css"/>-->
@@ -18,24 +18,11 @@
     </ul>
 </nav>
 
-{% for index in data %}
-<h2>{{ index }}</h2>
+{% for party in data %}
+<h2>{{ party.shortName }} | {{ party.date}}, адрес {{party.address}}</h2>
+<p>{{party.description}}</p>
 {% endfor %}
 
-<!-- Contact -->
-<article id="contact" class="wrapper style4">
-    <div class="container medium">
-        <header>
-            <h3>Have me make stuff for you.</h3>
-        </header>
-        <footer>
-            <ul id="copyright">
-                <li>&copy; Untitled. All rights reserved.</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </footer>
-    </div>
-</article>
 
 </body>
 </html>

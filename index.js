@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require("path");
 const nunjucks = require("nunjucks");
+const axios = require('axios');
+
 const app = express()
 const port = 8080
 
@@ -15,7 +17,15 @@ app.use(express.static( path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     const data = ['fdfsdf','4fsdf44','vndssxgs','jxgwxhww']
-    res.render('index.html', {data:data});
+    axios.get('http://188.166.87.148/parties')
+        .then(response => {
+            console.log(response.data);
+            res.render('index.html', {data:response.data});
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
     // res.send('Hello World!')
 })
 
