@@ -17,7 +17,7 @@ app.use(express.static( path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     const data = ['fdfsdf','4fsdf44','vndssxgs','jxgwxhww']
-    axios.get('http://188.166.87.148/parties')
+    axios.get('https://event-editor-6oghn.ondigitalocean.app/parties')
         .then(response => {
             console.log(response.data);
             res.render('index.html', {data:response.data});
